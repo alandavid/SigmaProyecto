@@ -1,21 +1,18 @@
-# Apply for .NET Ninja in Syntagma Team
+# Apply for .NET Ninja
 
-Pre-requisites
+Layers
 ------------------------------------
+La aplicacion fue aplicada algunas mejoras como ejemplo agregando Nueva capas que seria:
 
-- Git (used to clone this project)
-- Visual Studio 2015 or greater
-- NET Framework v4.5.2
-- MVC 5.2
+- Businnes:Será donde estará centralizada toda la logica de la aplicacion utilizando el Patron FACADE,que centraliza funcionalidades desacoplada por metodos.
+- Common : Será responsable de disponibilizar todas funcionalidades em comun entre toda las capas ejemplo (Excepciones ,Extension...)
+- DataAccess: Responsable de impactar y tener acceso a los Datos(DB)
+- Model:Donde disponibilizara todo el modelo de la aplicaciones por clases y sus funcionalidades.
+- Test: Responsable por las pruebas unitarias de la aplicacion de Ninja para mantener la calidad de código buscando un coverage mayor a 80%.
+- Web: Capa de Presentacion Front End donde si integra con el core.
 
-Instructions
+
+Inyección de dependencia
 ------------------------------------
+- Agregado el patron de inyeccion de depencia con ioc para quitar la responsabiulidad de la clases principal de crear intancias y sus dependencias, para evitar la depencia directa.
 
-1. (Github) Fork this project (https://github.com/syntagma/apply-4-net-ninja/) with your Github's account.
-2. Open the solution file with Visual Studio 2015 or greater.
-3. Read the customer changes in the Email and modify the project.
-3. Commit and push the changes in your forked repository.
-4. Respond the email to the customer "Cliente SA" detailing the work simulating a real customer. Don't forget to include your URL Repo.
-5. Wait for our contact.
-
-Thank you for your time. We appreciate this effort.
