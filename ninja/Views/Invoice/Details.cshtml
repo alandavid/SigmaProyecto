@@ -1,0 +1,268 @@
+﻿@model ninja.Models.Invoice.InvoiceDto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <input id="IdInvoice" class="hidden" value="@Html.DisplayFor(model => model.Id)" />
+        <h2 class="panel-title">Detalles factura Id:  @Html.DisplayFor(model => model.Id)</h2>
+    </div>
+    <div class="panel-body">
+        <div>
+            <p>Descripción: @Html.DisplayFor(model => model.Type)</p>
+        </div>
+
+        <hr />
+        <button id="btnshow" class="btn btn-primary">Agregar Itens</button>
+        <button id="btnhide" class="btn btn-primary">Cancelar Itens</button>
+        <input type="button" id="btnSave" class="btn btn-success" value="Guardar" />
+        <input type="button" id="btnUpdate" class="btn btn-success" value="Actualizar" />
+        <br />
+        <br />
+        <div id="formDetail">
+            <form id="myform">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-4">
+                        <input class="hidden" id="idDetail" placeholder="Descripción" />
+                        <input class="form-control" id="DDecription" name="DDecription" placeholder="Descripción" />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4">
+                        <input class="form-control" id="DAmount" name="DAmount" placeholder="Cantidad" />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4">
+                        <input class="form-control" id="DUnit" name="DUnit" placeholder="Unidad" />
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <h4>Items factura</h4>
+        <table class="table table table-bordered table-hover">
+            <tr>
+                <th>
+                    ID Item
+                </th>
+                <th>
+                    Descripición
+                </th>
+                <th>
+                    Cantidad
+                </th>
+                <th>
+                    Preco Unitario
+                </th>
+
+                <th>
+                    Total
+                </th>
+                <th>
+                    Total con Tasa
+                </th>
+                <th>
+                    Tasa
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Detail)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPriceWithTaxes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Taxes)
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" onclick="UpdateDetails('@item.Id','@item.Description','@item.Amount','@item.UnitPrice')">Actualizar</button>
+                        <button class="btn btn-danger" onclick="DeleteDetails(@item.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <p>
+            @Html.ActionLink("Actualizar", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Volver", "Index")
+        </p>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        function DeleteDetails(id) {
+
+            $.ajax(
+                {
+                    type: "POST",
+                    data: JSON.stringify({
+                        InvoiceId: $('#IdInvoice').val(),
+                        Id: id
+                    }),
+                    url: "/Invoice/DeleteDetailById",
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result) {
+
+                        location.reload();
+                        messageSuccess();
+                    }
+                })
+
+        }
+        function messageSuccess() {
+
+            alert("Operación Exitosa!")
+        }
+
+        function UpdateDetails(id, Description, Amount, UnitPrice) {
+
+            $('#btnshow').hide();
+            $('#btnUpdate').show();
+
+            $('#btnSave').hide();
+            $('#formDetail').show();
+            $('#btnhide').show();
+            $('#idDetail').val(id);
+            $('#DDecription').val(Description);
+            $('#DAmount').val(Amount);
+            $('#DUnit').val(UnitPrice);
+
+        }
+
+        $(document).ready(function () {
+
+            $('#btnhide').hide();
+            $('#formDetail').hide();
+            $('#btnSave').hide();
+            $('#btnUpdate').hide();
+
+
+            $("#btnshow").click(function () {
+                $('#btnshow').hide();
+                $('#btnhide').show();
+                $('#btnSave').show();
+                $('#formDetail').show();
+            });
+
+            $("#btnhide").click(function () {
+                $('#btnUpdate').hide();
+                $('#btnshow').show();
+                $('#btnhide').hide();
+                $('#btnSave').hide();
+                $('#formDetail').hide();
+                $('#DDecription').val("");
+                $('#DAmount').val("");
+                $('#DUnit').val("");
+
+            });
+
+
+
+
+            $("#btnSave").click(function () {
+
+                if ($('#DDecription').val() == "") {
+                    alert("Descripición es requerida")
+                    return;
+                };
+                if ($('#DAmount').val() == "") {
+                    alert("Cantidad es requerida")
+                    return;
+                };
+                if ($('#DUnit').val() == "") {
+                    alert("Unidad es requerida")
+                    return;
+                };
+
+                $.ajax(
+                    {
+                        type: "POST",
+                        data: JSON.stringify({
+                            InvoiceId: $('#IdInvoice').val(),
+                            Description: $('#DDecription').val(),
+                            Amount: $('#DAmount').val(),
+                            UnitPrice: $('#DUnit').val()
+                        }),
+                        url: "/Invoice/SaveDetails",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (result) {
+
+                            location.reload();
+                            messageSuccess();
+
+                        }
+                    })
+
+
+
+            });
+
+            $("#btnUpdate").click(function () {
+
+                if ($('#DDecription').val() == "") {
+                    alert("Descripición es requerida")
+                    return;
+                };
+                if ($('#DAmount').val() == "") {
+                    alert("Cantidad es requerida")
+                    return;
+                };
+                if ($('#DUnit').val() == "") {
+                    alert("Unidad es requerida")
+                    return;
+                };
+
+                $.ajax(
+                    {
+                        type: "POST",
+                        data: JSON.stringify({
+                            Id: $('#idDetail').val(),
+                            InvoiceId: $('#IdInvoice').val(),
+                            Description: $('#DDecription').val(),
+                            Amount: $('#DAmount').val(),
+                            UnitPrice: $('#DUnit').val()
+                        }),
+                        url: "/Invoice/UpdateDetailById",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (result) {
+
+                            location.reload();
+                            messageSuccess();
+                        }
+                    })
+
+
+
+            });
+
+        });
+
+    </script>
+}
+
+
+
+

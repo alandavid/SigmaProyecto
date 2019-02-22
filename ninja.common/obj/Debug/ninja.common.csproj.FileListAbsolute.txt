@@ -1,0 +1,13 @@
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\ninja.common.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\ninja.common.pdb
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\Castle.Core.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\Castle.Windsor.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\ninja.model.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\ninja.model.pdb
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\Castle.Core.xml
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\bin\Debug\Castle.Windsor.xml
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\obj\Debug\ninja.common.csprojAssemblyReference.cache
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\obj\Debug\ninja.common.csproj.CoreCompileInputs.cache
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\obj\Debug\ninja.common.csproj.CopyComplete
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\obj\Debug\ninja.common.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.common\obj\Debug\ninja.common.pdb

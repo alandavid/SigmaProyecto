@@ -1,0 +1,15 @@
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\ninja.dataAcces.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\ninja.dataAcces.pdb
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\ninja.model.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\ninja.model.pdb
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\obj\Debug\ninja.dataAcces.csprojAssemblyReference.cache
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\obj\Debug\ninja.dataAcces.csproj.CoreCompileInputs.cache
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\obj\Debug\ninja.dataAcces.csproj.CopyComplete
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\obj\Debug\ninja.dataAcces.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\obj\Debug\ninja.dataAcces.pdb
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\ninja.common.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\Castle.Windsor.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\Castle.Core.dll
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\ninja.common.pdb
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\Castle.Windsor.xml
+C:\Users\AlanPC\Desktop\Proyecto Sigma\apply-4-net-ninja-master\ninja.dataAcces\bin\Debug\Castle.Core.xml
